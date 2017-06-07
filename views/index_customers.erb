@@ -1,0 +1,16 @@
+<p>PUNY CUSTOMERS! YOU CANNOT HURT PIZZASHOP!</p>
+
+<p><a href="/customer/new">CREATE NEW CUSTOMER</a></p>
+
+<% for customer in @customers %>
+<p><a href="/customer/<%=customer.id%>">Customer Name: <%= customer.name%></a></p>
+<p>Customer ID: <%= customer.id%> </p>
+<p>Customer ORDERS: </p> 
+
+
+<% for order in customer.orders %>
+<ul>
+<li><%=order.quantity%> <%=order.topping%> pizzas!</li>
+</ul>
+<%end%>
+<%end%>
